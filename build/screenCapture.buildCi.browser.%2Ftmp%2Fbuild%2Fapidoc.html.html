@@ -1,0 +1,1089 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/Benvie/node-Windows">windows (v0.0.6)</a>
+</h1>
+<h4>A random but growing collection of utilities for Windows for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows">module windows</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry">
+            function <span class="apidocSignatureSpan">windows.</span>registry
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.</span>Command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.</span>associations</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.</span>fonts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.</span>shortcut</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.</span>utility</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.</span>winsdk</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows.Command">module windows.Command</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.Command.Command">
+            function <span class="apidocSignatureSpan">windows.</span>Command
+            <span class="apidocSignatureSpan">(command, name, format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.Command.execSync">
+            function <span class="apidocSignatureSpan">windows.Command.</span>execSync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows.associations">module windows.associations</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.associations.associations">
+            function <span class="apidocSignatureSpan">windows.</span>associations
+            <span class="apidocSignatureSpan">(ext, assoc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.associations.fileTypes">
+            function <span class="apidocSignatureSpan">windows.associations.</span>fileTypes
+            <span class="apidocSignatureSpan">(ext, assoc)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows.fonts">module windows.fonts</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.fonts.getList">
+            function <span class="apidocSignatureSpan">windows.fonts.</span>getList
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.fonts.getNames">
+            function <span class="apidocSignatureSpan">windows.fonts.</span>getNames
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows.registry">module windows.registry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.registry">
+            function <span class="apidocSignatureSpan">windows.</span>registry
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.add">
+            function <span class="apidocSignatureSpan">windows.registry.</span>add
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.compare">
+            function <span class="apidocSignatureSpan">windows.registry.</span>compare
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.copy">
+            function <span class="apidocSignatureSpan">windows.registry.</span>copy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.delete">
+            function <span class="apidocSignatureSpan">windows.registry.</span>delete
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.export">
+            function <span class="apidocSignatureSpan">windows.registry.</span>export
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.flags">
+            function <span class="apidocSignatureSpan">windows.registry.</span>flags
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.import">
+            function <span class="apidocSignatureSpan">windows.registry.</span>import
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.load">
+            function <span class="apidocSignatureSpan">windows.registry.</span>load
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.query">
+            function <span class="apidocSignatureSpan">windows.registry.</span>query
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.restore">
+            function <span class="apidocSignatureSpan">windows.registry.</span>restore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.save">
+            function <span class="apidocSignatureSpan">windows.registry.</span>save
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.registry.unload">
+            function <span class="apidocSignatureSpan">windows.registry.</span>unload
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows.shortcut">module windows.shortcut</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.shortcut.createShortcut">
+            function <span class="apidocSignatureSpan">windows.shortcut.</span>createShortcut
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.shortcut.</span>properties</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.shortcut.</span>specialFolders</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">windows.shortcut.</span>styles</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows.utility">module windows.utility</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.utility.arrayToObject">
+            function <span class="apidocSignatureSpan">windows.utility.</span>arrayToObject
+            <span class="apidocSignatureSpan">(arr, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.utility.exists">
+            function <span class="apidocSignatureSpan">windows.utility.</span>exists
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.utility.expand">
+            function <span class="apidocSignatureSpan">windows.utility.</span>expand
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.utility.lazyProperty">
+            function <span class="apidocSignatureSpan">windows.utility.</span>lazyProperty
+            <span class="apidocSignatureSpan">(obj, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.utility.q">
+            function <span class="apidocSignatureSpan">windows.utility.</span>q
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.utility.resolve">
+            function <span class="apidocSignatureSpan">windows.utility.</span>resolve
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.windows.winsdk">module windows.winsdk</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.windows.winsdk.find">
+            function <span class="apidocSignatureSpan">windows.winsdk.</span>find
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows" id="apidoc.module.windows">module windows</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry" id="apidoc.element.windows.registry">
+        function <span class="apidocSignatureSpan">windows.</span>registry
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registry(key, options){
+  key = typeof key === 'string' ? resolve(key) : key.toString();
+  var p = [q(key)];
+
+  if (options) {
+
+    options.recursive        &amp;&amp; p.push('/s');
+    options.search           &amp;&amp; p.push('/f', q(options.search));
+    options.in === 'keys'    &amp;&amp; p.push('/k');
+    options.in === 'values'  &amp;&amp; p.push('/d');
+    options.case             &amp;&amp; p.push('/c');
+    options.exact            &amp;&amp; p.push('/e');
+    options.type             &amp;&amp; p.push('/t', options.type);
+
+  } else {
+    options = {};
+  }
+
+  var result = new Keyset(key);
+
+  registry.query(p).reduce(function(current, line){
+    if (line.substring(0, 5) === 'ERROR') {
+      var err = new RegistryError(line.substring(7));
+      throw err;
+    }
+
+    if (line.indexOf(key) === 0 &amp;&amp; line !== key) {
+      // all rehistry keysets report their full path, will start with the initial query
+      if (options.recursive) {
+        // a recursive search will fully explore the tree so no need for getters
+        result[line.slice(key.length + 1)] = current = new Keyset(line);
+
+      } else {
+        // provide getters to simiulate fluent access
+        Object.defineProperty(result, line.slice(key.length + 1), {
+          get: function(){ return registry(line, options) },
+          enumerable: true
+        });
+      }
+    } else if (line.indexOf('    ') === 0) {
+      var entry = new Entry(current, line);
+      current[entry.name] = entry;
+    }
+    return current;
+  }, result);
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows.Command" id="apidoc.module.windows.Command">module windows.Command</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.Command.Command" id="apidoc.element.windows.Command.Command">
+        function <span class="apidocSignatureSpan">windows.</span>Command
+        <span class="apidocSignatureSpan">(command, name, format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Command(command, name, format){
+  if (typeof name === 'function') {
+    format = name;
+    name = command;
+  }
+  name = (name || command).replace(/\s/g, '_');
+
+  var cmd = eval('1&amp;&amp;function '+name+'(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command
+.prototype.sync).apply('+name+',v)}');
+  cmd.__proto__ = Command.prototype;
+  cmd.command = command;
+  if (typeof format === 'function') {
+    Object.defineProperty(cmd, 'format', { value: format, writable: true, configurable: true });
+  }
+  return cmd;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.Command.execSync" id="apidoc.element.windows.Command.execSync">
+        function <span class="apidocSignatureSpan">windows.Command.</span>execSync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execSync(){
+  var f = 'sync' + Math.random();
+  exec(makeParams(arguments)+' 1&gt;'+f+' 2&gt;&amp;1 &amp; ren '+f+' '+f+'_');
+  f += '_';
+  while (!exists(f));
+  var output = fs.readFileSync(f, 'utf8');
+  fs.unlinkSync(f);
+  return output;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows.associations" id="apidoc.module.windows.associations">module windows.associations</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.associations.associations" id="apidoc.element.windows.associations.associations">
+        function <span class="apidocSignatureSpan">windows.</span>associations
+        <span class="apidocSignatureSpan">(ext, assoc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">associations = function (ext, assoc){
+  if (ext) {
+    if (assoc) {
+      return set(ext, assoc);
+    } else {
+      return get(ext);
+    }
+  } else {
+    return list();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.associations.fileTypes" id="apidoc.element.windows.associations.fileTypes">
+        function <span class="apidocSignatureSpan">windows.associations.</span>fileTypes
+        <span class="apidocSignatureSpan">(ext, assoc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileTypes = function (ext, assoc){
+  if (ext) {
+    if (assoc) {
+      return set(ext, assoc);
+    } else {
+      return get(ext);
+    }
+  } else {
+    return list();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows.fonts" id="apidoc.module.windows.fonts">module windows.fonts</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.fonts.getList" id="apidoc.element.windows.fonts.getList">
+        function <span class="apidocSignatureSpan">windows.fonts.</span>getList
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getList(){
+  return registry('HKLM/SOFTWARE/Microsoft/Windows NT/CurrentVersion/Fonts');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.fonts.getNames" id="apidoc.element.windows.fonts.getNames">
+        function <span class="apidocSignatureSpan">windows.fonts.</span>getNames
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNames(){
+  return Object.keys(getList()).sort().reduce(function(r, font){
+    var type = font.match(/((?:True|Open)Type)/);
+    type = type ? type[1] : 'unknown';
+    r[type].push(font.replace(/\s*\((?:True|Open)Type\)/g, ''));
+    return r;
+  }, { TrueType: [], OpenType: [], unknown: [] });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows.registry" id="apidoc.module.windows.registry">module windows.registry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.registry" id="apidoc.element.windows.registry.registry">
+        function <span class="apidocSignatureSpan">windows.</span>registry
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registry(key, options){
+  key = typeof key === 'string' ? resolve(key) : key.toString();
+  var p = [q(key)];
+
+  if (options) {
+
+    options.recursive        &amp;&amp; p.push('/s');
+    options.search           &amp;&amp; p.push('/f', q(options.search));
+    options.in === 'keys'    &amp;&amp; p.push('/k');
+    options.in === 'values'  &amp;&amp; p.push('/d');
+    options.case             &amp;&amp; p.push('/c');
+    options.exact            &amp;&amp; p.push('/e');
+    options.type             &amp;&amp; p.push('/t', options.type);
+
+  } else {
+    options = {};
+  }
+
+  var result = new Keyset(key);
+
+  registry.query(p).reduce(function(current, line){
+    if (line.substring(0, 5) === 'ERROR') {
+      var err = new RegistryError(line.substring(7));
+      throw err;
+    }
+
+    if (line.indexOf(key) === 0 &amp;&amp; line !== key) {
+      // all rehistry keysets report their full path, will start with the initial query
+      if (options.recursive) {
+        // a recursive search will fully explore the tree so no need for getters
+        result[line.slice(key.length + 1)] = current = new Keyset(line);
+
+      } else {
+        // provide getters to simiulate fluent access
+        Object.defineProperty(result, line.slice(key.length + 1), {
+          get: function(){ return registry(line, options) },
+          enumerable: true
+        });
+      }
+    } else if (line.indexOf('    ') === 0) {
+      var entry = new Entry(current, line);
+      current[entry.name] = entry;
+    }
+    return current;
+  }, result);
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.add" id="apidoc.element.windows.registry.add">
+        function <span class="apidocSignatureSpan">windows.registry.</span>add
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_add(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync).
+apply(reg_add,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    versions: [8, 9, 10] }
+
+
+registry(key, options)                   // returns an object containing the keys and values
+
+v = registry('HKLM/Software/Microsoft'   // wrapped in objects allowing further fluent commands
+v.someValue.remove()                     // delete value
+v.<span class="apidocCodeKeywordSpan">add</span>('newValue', 'myValue')             // add new value
+v.add('newKey')                          // a key is like a folder
+v.subKey                                 // getter which goes down one level deeper
+
+x = registry('HKCU/Some/Random/Place')
+x.add('newName', v.someValue)            // clone a value
+
+z = v.aValue                             // manipulate wrapped values even after deleting them
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.compare" id="apidoc.element.windows.registry.compare">
+        function <span class="apidocSignatureSpan">windows.registry.</span>compare
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_compare(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_compare,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.copy" id="apidoc.element.windows.registry.copy">
+        function <span class="apidocSignatureSpan">windows.registry.</span>copy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_copy(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_copy,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.delete" id="apidoc.element.windows.registry.delete">
+        function <span class="apidocSignatureSpan">windows.registry.</span>delete
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_delete(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_delete,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {String} [name]   If given deletes a child Keyset or Value instead of this KeySet
+ * @return {Boolean|String}  True or the returned error message.
+ */
+remove: function remove(name){
+  if (name &amp;&amp; name in this) {
+    return this[name].remove();
+  } else {
+    return SUCCESS(registry.<span class="apidocCodeKeywordSpan">delete</span>(q(this.path), '/f'));
+  }
+},
+
+/**
+ * Add a new child to this Keyset
+ * @param  {String} name  Name of the new child
+ * @param  {Any}  [value] Creates an Entry if supplied, otherwise a Keyset
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.export" id="apidoc.element.windows.registry.export">
+        function <span class="apidocSignatureSpan">windows.registry.</span>export
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_export(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_export,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.flags" id="apidoc.element.windows.registry.flags">
+        function <span class="apidocSignatureSpan">windows.registry.</span>flags
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_flags(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_flags,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.import" id="apidoc.element.windows.registry.import">
+        function <span class="apidocSignatureSpan">windows.registry.</span>import
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_import(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_import,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.load" id="apidoc.element.windows.registry.load">
+        function <span class="apidocSignatureSpan">windows.registry.</span>load
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_load(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_load,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.query" id="apidoc.element.windows.registry.query">
+        function <span class="apidocSignatureSpan">windows.registry.</span>query
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_query(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_query,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  } else {
+options = {};
+  }
+
+  var result = new Keyset(key);
+
+  registry.<span class="apidocCodeKeywordSpan">query</span>(p).reduce(function(current, line){
+if (line.substring(0, 5) === 'ERROR') {
+  var err = new RegistryError(line.substring(7));
+  throw err;
+}
+
+if (line.indexOf(key) === 0 &amp;&amp; line !== key) {
+  // all rehistry keysets report their full path, will start with the initial query
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.restore" id="apidoc.element.windows.registry.restore">
+        function <span class="apidocSignatureSpan">windows.registry.</span>restore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_restore(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_restore,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.save" id="apidoc.element.windows.registry.save">
+        function <span class="apidocSignatureSpan">windows.registry.</span>save
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_save(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_save,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.registry.unload" id="apidoc.element.windows.registry.unload">
+        function <span class="apidocSignatureSpan">windows.registry.</span>unload
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reg_unload(){var v=arguments;return (v[v.length-1] instanceof Function ? Command.prototype.async : Command.prototype.sync
+).apply(reg_unload,v)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows.shortcut" id="apidoc.module.windows.shortcut">module windows.shortcut</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.shortcut.createShortcut" id="apidoc.element.windows.shortcut.createShortcut">
+        function <span class="apidocSignatureSpan">windows.shortcut.</span>createShortcut
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createShortcut(options){ return new Shortcut(options) }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows.utility" id="apidoc.module.windows.utility">module windows.utility</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.utility.arrayToObject" id="apidoc.element.windows.utility.arrayToObject">
+        function <span class="apidocSignatureSpan">windows.utility.</span>arrayToObject
+        <span class="apidocSignatureSpan">(arr, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function arrayToObject(arr, callback){
+  return arr.reduce(function(r,s){
+    var result = callback(s);
+    if (Array.isArray(result)) {
+      r[result[0]] = result[1];
+    }
+    return r;
+  }, {})
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.utility.exists" id="apidoc.element.windows.utility.exists">
+        function <span class="apidocSignatureSpan">windows.utility.</span>exists
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exists(x){ return existsSync(path._makeLong(x)) }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.utility.expand" id="apidoc.element.windows.utility.expand">
+        function <span class="apidocSignatureSpan">windows.utility.</span>expand
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function expand(str){
+  return Object.keys(process.env).reduce(function(str, name){
+    return str.replace(new RegExp('%'+name+'%', 'ig'), process.env[name]);
+  }, str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.utility.lazyProperty" id="apidoc.element.windows.utility.lazyProperty">
+        function <span class="apidocSignatureSpan">windows.utility.</span>lazyProperty
+        <span class="apidocSignatureSpan">(obj, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lazyProperty(obj, name){
+  if (Array.isArray(name)) {
+    name.forEach(function(prop){ lazyProperty(obj, prop) });
+    return obj;
+  }
+  var visible = name[0] === '$';
+  name = visible ? name.slice(1) : name;
+  Object.defineProperty(obj, name, {
+    configurable: true,
+    enumerable: visible,
+    get: function(){},
+    set: function(v){ Object.defineProperty(this, name, { value: v, writable: true }) }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.utility.q" id="apidoc.element.windows.utility.q">
+        function <span class="apidocSignatureSpan">windows.utility.</span>q
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function q(str){ return '"'+str.replace(/"/g, '\\\"')+'"' }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.windows.utility.resolve" id="apidoc.element.windows.utility.resolve">
+        function <span class="apidocSignatureSpan">windows.utility.</span>resolve
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolve(x){
+  var resolved = x;
+  if (!exists(resolved)) {
+    if (!exists(resolved = expand(x))) {
+      return false
+    }
+  }
+  return resolved;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+var formatters = {
+location: function(v){
+  if (~special.indexOf(v)) {
+    return 'ws.SpecialFolders("'+v+'")';
+  } else {
+    return quotes(path.<span class="apidocCodeKeywordSpan">resolve</span>(v));
+  }
+},
+style: function(v){
+  var index = styles.indexOf(this.style);
+  return ~index ? index : 1;
+},
+title: function(v){
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.windows.winsdk" id="apidoc.module.windows.winsdk">module windows.winsdk</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.windows.winsdk.find" id="apidoc.element.windows.winsdk.find">
+        function <span class="apidocSignatureSpan">windows.winsdk.</span>find
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findWindowsSDK(){
+  var winSDK = registry('HKLM/Software/Microsoft/Microsoft SDKs/Windows');
+  var keys = Object.keys(winSDK);
+  if (keys.length) {
+    return {
+      path: winSDK.CurrentInstallFolder.value,
+      versions: keys.filter(function(s){ return s[0] === 'v' })
+    };
+  } else {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
